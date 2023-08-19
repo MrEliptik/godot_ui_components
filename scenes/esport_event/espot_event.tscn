@@ -14,11 +14,11 @@
 [sub_resource type="Theme" id="Theme_tjn2o"]
 default_font = ExtResource("1_8jcet")
 
-[sub_resource type="Gradient" id="Gradient_m70w8"]
+[sub_resource type="Gradient" id="Gradient_usfil"]
 colors = PackedColorArray(0.258824, 0.301961, 0.372549, 1, 0.639216, 0.666667, 0.690196, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ft2k7"]
-gradient = SubResource("Gradient_m70w8")
+gradient = SubResource("Gradient_usfil")
 width = 1920
 height = 1080
 use_hdr = true
@@ -39,12 +39,12 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[sub_resource type="Gradient" id="Gradient_lifnf"]
+[sub_resource type="Gradient" id="Gradient_m1r7v"]
 offsets = PackedFloat32Array(0.107143, 1)
 colors = PackedColorArray(0.0666667, 0.0784314, 0.113725, 1, 0.133333, 0.141176, 0.207843, 0.964706)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_y8dwx"]
-gradient = SubResource("Gradient_lifnf")
+gradient = SubResource("Gradient_m1r7v")
 width = 700
 height = 516
 use_hdr = true
@@ -103,7 +103,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_tjn2o")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="BG" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

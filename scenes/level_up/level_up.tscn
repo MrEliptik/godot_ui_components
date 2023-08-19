@@ -1,0 +1,238 @@
+[gd_scene load_steps=22 format=3 uid="uid://bh44t48g0wayk"]
+
+[ext_resource type="Shader" path="res://scenes/shared/shaders/gradientgdshader.gdshader" id="1_o2e1d"]
+[ext_resource type="Script" path="res://scenes/level_up/level_up.gd" id="1_wg25o"]
+[ext_resource type="Texture2D" uid="uid://dskgiwy06ecu0" path="res://scenes/level_up/assets/badge.png" id="2_v4eyb"]
+[ext_resource type="Texture2D" uid="uid://v63l28dn6u5g" path="res://scenes/level_up/assets/star.png" id="3_0l633"]
+[ext_resource type="FontFile" uid="uid://wh31x17oioib" path="res://scenes/shared/fonts/roboto_condensed/RobotoCondensed-Regular.ttf" id="3_c22g7"]
+[ext_resource type="FontFile" uid="uid://ch8lfqo6m5vrx" path="res://scenes/shared/fonts/roboto_condensed/RobotoCondensed-Bold.ttf" id="4_ki3yn"]
+[ext_resource type="Texture2D" uid="uid://dhbb73yqjwqgj" path="res://scenes/level_up/assets/separator.png" id="5_mxv4h"]
+[ext_resource type="Texture2D" uid="uid://cqlr6in0qyolb" path="res://scenes/level_up/assets/hexagone.png" id="8_s851w"]
+
+[sub_resource type="Gradient" id="Gradient_prniq"]
+offsets = PackedFloat32Array(0, 0.464286, 1)
+colors = PackedColorArray(0.292969, 0.0828832, 0.109186, 1, 0.125, 0.120721, 0.118824, 1, 0, 0.224611, 0.238281, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_533cp"]
+gradient = SubResource("Gradient_prniq")
+width = 1920
+height = 1080
+use_hdr = true
+fill_to = Vector2(1, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_faj36"]
+offsets = PackedFloat32Array(0.00632911, 0.367089, 0.68038, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.372549, 1, 1, 1, 0.329412, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_my7b8"]
+gradient = SubResource("Gradient_faj36")
+
+[sub_resource type="Curve" id="Curve_lfrbs"]
+max_value = 2.5
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 2.5), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_phrjk"]
+curve = SubResource("Curve_lfrbs")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ekdai"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_curve = SubResource("CurveTexture_phrjk")
+color_ramp = SubResource("GradientTexture1D_my7b8")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tgwyi"]
+shader = ExtResource("1_o2e1d")
+shader_parameter/first_color = Color(0.0823529, 0.0823529, 0.0823529, 0.788235)
+shader_parameter/second_color = Color(0.0862745, 0.0862745, 0.0862745, 0.815686)
+shader_parameter/position = 0.0
+shader_parameter/size = 1.011
+shader_parameter/angle = 112.626
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sq6fa"]
+bg_color = Color(0.152941, 0.184314, 0.137255, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.298039, 0.298039, 0.298039, 0.713726)
+corner_radius_top_left = 23
+corner_radius_top_right = 23
+corner_radius_bottom_right = 23
+corner_radius_bottom_left = 23
+
+[sub_resource type="Curve" id="Curve_xo2gi"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.512968, 0.989474), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_mxxu2"]
+curve = SubResource("Curve_xo2gi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ddc2t"]
+lifetime_randomness = 0.48
+emission_shape = 3
+emission_box_extents = Vector3(80, 80, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.25
+scale_max = 0.7
+scale_curve = SubResource("CurveTexture_mxxu2")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_py077"]
+bg_color = Color(0.945098, 0.352941, 0.160784, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="level_up" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wg25o")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_533cp")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(960, 540)
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_ekdai")
+texture = ExtResource("8_s851w")
+lifetime = 6.5
+
+[node name="Card" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.0
+offset_top = -480.0
+offset_right = 270.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(270, 480)
+
+[node name="PanelBG" type="Panel" parent="Card"]
+material = SubResource("ShaderMaterial_tgwyi")
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sq6fa")
+
+[node name="PanelOutline" type="Panel" parent="Card/PanelBG"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sq6fa")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Card"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 50.0
+offset_right = 5.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Card/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_v4eyb")
+stretch_mode = 5
+
+[node name="StarParticles" type="GPUParticles2D" parent="Card/VBoxContainer/TextureRect"]
+position = Vector2(99, 94)
+emitting = false
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_ddc2t")
+texture = ExtResource("3_0l633")
+lifetime = 2.5
+
+[node name="LevelUp" type="Label" parent="Card/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0156863, 0.65098, 0.65098, 1)
+theme_override_fonts/font = ExtResource("3_c22g7")
+theme_override_font_sizes/font_size = 39
+text = "LEVEL UP!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="XP" type="Label" parent="Card/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.956863, 0.403922, 0, 1)
+theme_override_fonts/font = ExtResource("4_ki3yn")
+theme_override_font_sizes/font_size = 61
+text = "+1,500"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Points" type="Label" parent="Card/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_c22g7")
+theme_override_font_sizes/font_size = 39
+text = "POINTS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Separator" type="TextureRect" parent="Card/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_mxv4h")
+stretch_mode = 5
+
+[node name="AvailablePoints" type="Label" parent="Card/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.419608, 0.419608, 0.419608, 1)
+theme_override_fonts/font = ExtResource("3_c22g7")
+theme_override_font_sizes/font_size = 39
+text = "AVAILABLE POINTS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PointsValue" type="Label" parent="Card/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ki3yn")
+theme_override_font_sizes/font_size = 91
+text = "6,350"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Card/VBoxContainer"]
+custom_minimum_size = Vector2(450, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("4_ki3yn")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_py077")
+text = "Game On!"
