@@ -1,0 +1,426 @@
+[gd_scene load_steps=24 format=3 uid="uid://cdfyajuw5yq7w"]
+
+[ext_resource type="FontFile" uid="uid://wh31x17oioib" path="res://scenes/shared/fonts/roboto_condensed/RobotoCondensed-Regular.ttf" id="1_8jcet"]
+[ext_resource type="Texture2D" uid="uid://cbx0rlqrwqtrq" path="res://scenes/esport_event/assets/pablo-heimplatz-ZODcBkEohk8-unsplash.jpg" id="1_x5ux6"]
+[ext_resource type="Texture2D" uid="uid://dhwh7ymetab4x" path="res://scenes/esport_event/assets/Godot_icon.svg.png" id="2_6ql56"]
+[ext_resource type="Shader" path="res://scenes/shared/shaders/gradientgdshader.gdshader" id="3_a6j01"]
+[ext_resource type="FontFile" uid="uid://d4imt37tjbuss" path="res://scenes/shared/fonts/lato/Lato-Bold.ttf" id="5_oal8g"]
+[ext_resource type="Texture2D" uid="uid://drairmbq6eaj1" path="res://scenes/shared/icons/icons8-trophy-96.png" id="6_kg23u"]
+[ext_resource type="Texture2D" uid="uid://chuj6ex4pevjd" path="res://scenes/shared/icons/icons8-person-96.png" id="7_g7c81"]
+[ext_resource type="Texture2D" uid="uid://ca5a6lcwa0mom" path="res://scenes/shared/icons/icons8-medal-96.png" id="8_b5qv4"]
+[ext_resource type="Texture2D" uid="uid://dyuxbcoutohs2" path="res://scenes/esport_event/assets/godette_2_round.png" id="9_movkn"]
+[ext_resource type="FontFile" uid="uid://ch8lfqo6m5vrx" path="res://scenes/shared/fonts/roboto_condensed/RobotoCondensed-Bold.ttf" id="10_7wqca"]
+
+[sub_resource type="Theme" id="Theme_tjn2o"]
+default_font = ExtResource("1_8jcet")
+
+[sub_resource type="Gradient" id="Gradient_m70w8"]
+colors = PackedColorArray(0.258824, 0.301961, 0.372549, 1, 0.639216, 0.666667, 0.690196, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ft2k7"]
+gradient = SubResource("Gradient_m70w8")
+width = 1920
+height = 1080
+use_hdr = true
+fill_to = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_onx6s"]
+shader = ExtResource("3_a6j01")
+shader_parameter/first_color = Color(0.0666667, 0.0784314, 0.113725, 1)
+shader_parameter/second_color = Color(0.133333, 0.141176, 0.207843, 1)
+shader_parameter/position = 0.0
+shader_parameter/size = 1.128
+shader_parameter/angle = 349.944
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fbejq"]
+bg_color = Color(0.498039, 0.6, 0.443137, 0.568627)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="Gradient" id="Gradient_lifnf"]
+offsets = PackedFloat32Array(0.107143, 1)
+colors = PackedColorArray(0.0666667, 0.0784314, 0.113725, 1, 0.133333, 0.141176, 0.207843, 0.964706)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_y8dwx"]
+gradient = SubResource("Gradient_lifnf")
+width = 700
+height = 516
+use_hdr = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cyhw5"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.0941176, 0.113725, 0.160784, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.211765, 0.25098, 0.364706, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_dlvmo"]
+color = Color(0.148438, 0.175781, 0.253906, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8u7pq"]
+shader = ExtResource("3_a6j01")
+shader_parameter/first_color = Color(0.0941176, 0.113725, 0.160784, 1)
+shader_parameter/second_color = Color(0.121569, 0.145098, 0.207843, 1)
+shader_parameter/position = 0.0
+shader_parameter/size = 1.128
+shader_parameter/angle = 349.944
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqlfy"]
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jrrtd"]
+shader = ExtResource("3_a6j01")
+shader_parameter/first_color = Color(0.486275, 0.854902, 0.631373, 1)
+shader_parameter/second_color = Color(0.188235, 0.807843, 0.439216, 1)
+shader_parameter/position = 0.0
+shader_parameter/size = 0.978
+shader_parameter/angle = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytytr"]
+content_margin_left = 20.0
+content_margin_right = 20.0
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="EspotEvent" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_tjn2o")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_ft2k7")
+
+[node name="Card" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.5
+offset_top = -242.5
+offset_right = 325.5
+offset_bottom = 242.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelBG" type="Panel" parent="Card"]
+material = SubResource("ShaderMaterial_onx6s")
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fbejq")
+
+[node name="Image" type="TextureRect" parent="Card/PanelBG"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_x5ux6")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="TextureRect" type="TextureRect" parent="Card/PanelBG"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_y8dwx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Card"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 33.0
+offset_right = -31.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Card/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="TextureRect" type="TextureRect" parent="Card/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(215, 215)
+layout_mode = 2
+texture = ExtResource("2_6ql56")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Card/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="VSeparator" type="VSeparator" parent="Card/VBoxContainer/HBoxContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Card/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.396078, 0.439216, 0.556863, 1)
+theme_override_font_sizes/font_size = 21
+text = "NOV 4-5 2023 - Munich Germany"
+
+[node name="Label2" type="Label" parent="Card/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.956863, 0.956863, 0.960784, 1)
+theme_override_fonts/font = ExtResource("5_oal8g")
+theme_override_font_sizes/font_size = 37
+text = "Godot Conference"
+
+[node name="VSeparator2" type="VSeparator" parent="Card/VBoxContainer/HBoxContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Card/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Card/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.427451, 0.482353, 0.607843, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_cyhw5")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_cyhw5")
+disabled = true
+text = "Gamedev"
+
+[node name="Button2" type="Button" parent="Card/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.427451, 0.482353, 0.607843, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_cyhw5")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_cyhw5")
+disabled = true
+text = "Another Tag"
+
+[node name="Button3" type="Button" parent="Card/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.427451, 0.482353, 0.607843, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_cyhw5")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_cyhw5")
+disabled = true
+text = "Short"
+
+[node name="HSeparator" type="HSeparator" parent="Card/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_dlvmo")
+
+[node name="VSeparator3" type="VSeparator" parent="Card/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Card/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Card/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="Card/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.396078, 0.439216, 0.556863, 1)
+theme_override_font_sizes/font_size = 19
+text = "Prize Pool"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Card/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Card/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_kg23u")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="Card/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.956863, 0.956863, 0.960784, 1)
+theme_override_fonts/font = ExtResource("5_oal8g")
+theme_override_font_sizes/font_size = 21
+text = "$100 000"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Card/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="Card/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.396078, 0.439216, 0.556863, 1)
+theme_override_font_sizes/font_size = 19
+text = "Team Size"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Card/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Card/VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_g7c81")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="Card/VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.956863, 0.956863, 0.960784, 1)
+theme_override_fonts/font = ExtResource("5_oal8g")
+theme_override_font_sizes/font_size = 21
+text = "3v3"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Card/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="Card/VBoxContainer/HBoxContainer2/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.396078, 0.439216, 0.556863, 1)
+theme_override_font_sizes/font_size = 19
+text = "Participants"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Card/VBoxContainer/HBoxContainer2/VBoxContainer3"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Card/VBoxContainer/HBoxContainer2/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_b5qv4")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="Card/VBoxContainer/HBoxContainer2/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.956863, 0.956863, 0.960784, 1)
+theme_override_fonts/font = ExtResource("5_oal8g")
+theme_override_font_sizes/font_size = 21
+text = "48/128"
+
+[node name="PanelBottom" type="Panel" parent="Card"]
+material = SubResource("ShaderMaterial_8u7pq")
+clip_contents = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -114.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hqlfy")
+
+[node name="HSeparator" type="HSeparator" parent="Card/PanelBottom"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 4.0
+grow_horizontal = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_dlvmo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Card/PanelBottom"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 24.0
+offset_right = -32.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Card/PanelBottom/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Card/PanelBottom/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="TextureRect" type="TextureRect" parent="Card/PanelBottom/VBoxContainer/HBoxContainer3/HBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+texture = ExtResource("9_movkn")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Card/PanelBottom/VBoxContainer/HBoxContainer3/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="Card/PanelBottom/VBoxContainer/HBoxContainer3/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.396078, 0.439216, 0.556863, 1)
+theme_override_font_sizes/font_size = 16
+text = "Organized by"
+
+[node name="Label2" type="Label" parent="Card/PanelBottom/VBoxContainer/HBoxContainer3/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.956863, 0.956863, 0.960784, 1)
+theme_override_fonts/font = ExtResource("5_oal8g")
+theme_override_font_sizes/font_size = 20
+text = "Godette"
+
+[node name="Button" type="Button" parent="Card/PanelBottom/VBoxContainer/HBoxContainer3"]
+material = SubResource("ShaderMaterial_jrrtd")
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_ytytr")
+
+[node name="Label2" type="Label" parent="Card/PanelBottom/VBoxContainer/HBoxContainer3/Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.5
+offset_top = -13.0
+offset_right = 34.5
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.956863, 0.956863, 0.960784, 1)
+theme_override_fonts/font = ExtResource("10_7wqca")
+theme_override_font_sizes/font_size = 22
+text = "Started"
+horizontal_alignment = 1
+vertical_alignment = 1
