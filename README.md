@@ -2,9 +2,9 @@ A collection of UI deisgns implemented in Godot 4 ✨
 
 ## Components
 
-<div style="display: flex; flex-direction: row;">
-    <a href=scenes/esport_event><img src="medias/results/esport_event.png" width="360"/></a>
-    <a href=scenes/level_up><img src="medias/results/level_up_result.gif" width="360"/></a>
+<p float="left">
+    <a href=scenes/esport_event><img src="medias/results/esport_event.png" width="33%"/></a>
+    <a href=scenes/level_up><img src="medias/results/level_up_result.gif" width="33%"/></a>
 </div>
 
 ## Credits
