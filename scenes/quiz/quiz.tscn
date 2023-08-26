@@ -1,0 +1,519 @@
+[gd_scene load_steps=22 format=3 uid="uid://bti1v4d3hhcak"]
+
+[ext_resource type="Texture2D" uid="uid://dexti8gya12jo" path="res://scenes/quiz/visuals/illustration.png" id="1_3qq5e"]
+[ext_resource type="Script" path="res://scenes/quiz/scripts/quiz.gd" id="1_cakb6"]
+[ext_resource type="Texture2D" uid="uid://daqck3h8xlea" path="res://scenes/shared/visuals/circle_512.png" id="2_yng6b"]
+[ext_resource type="FontFile" uid="uid://d4imt37tjbuss" path="res://scenes/shared/fonts/lato/Lato-Bold.ttf" id="3_61rg4"]
+[ext_resource type="Texture2D" uid="uid://xcl1kbnikckr" path="res://scenes/quiz/visuals/godot.png" id="3_ieclj"]
+[ext_resource type="Texture2D" uid="uid://dh2i73mpn6n6q" path="res://scenes/quiz/visuals/undraw_Halloween_re_2kq1.png" id="3_nthxq"]
+[ext_resource type="Texture2D" uid="uid://cp635asefdrm6" path="res://scenes/quiz/visuals/quiz.png" id="4_aie3e"]
+[ext_resource type="Texture2D" uid="uid://l0enywuid1mv" path="res://scenes/shared/visuals/star.png" id="5_l4gr7"]
+[ext_resource type="Texture2D" uid="uid://cpxamucj48d2e" path="res://scenes/quiz/visuals/coin.png" id="7_2qgt1"]
+[ext_resource type="Texture2D" uid="uid://chuj6ex4pevjd" path="res://scenes/shared/icons/icons8-person-96.png" id="8_kdb3r"]
+[ext_resource type="Texture2D" uid="uid://bbm5txs4nl8g0" path="res://scenes/shared/icons/icons8-people-96.png" id="8_w4vus"]
+[ext_resource type="Texture2D" uid="uid://bxxq6adnwn7nx" path="res://scenes/quiz/visuals/crown.png" id="10_7tebc"]
+
+[sub_resource type="Gradient" id="Gradient_7is2k"]
+colors = PackedColorArray(0.842236, 0.892298, 0.960938, 1, 0.627538, 0.660156, 0.650134, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w4svm"]
+gradient = SubResource("Gradient_7is2k")
+width = 1920
+height = 1080
+use_hdr = true
+fill_to = Vector2(1, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_151fp"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="Curve" id="Curve_rfpv0"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.501441, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_j6xca"]
+curve = SubResource("Curve_rfpv0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_km45k"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 85.0
+emission_ring_inner_radius = 75.0
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = 25.0
+angular_velocity_max = 45.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+damping_min = 82.397
+damping_max = 92.667
+angle_max = 720.0
+scale_min = 0.4
+scale_max = 0.65
+scale_curve = SubResource("CurveTexture_j6xca")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_46q8j"]
+bg_color = Color(0.666667, 0.34902, 0.988235, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.709804, 0.458824, 0.992157, 1)
+corner_radius_top_left = 19
+corner_radius_top_right = 19
+corner_radius_bottom_right = 19
+corner_radius_bottom_left = 19
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e3dn2"]
+bg_color = Color(1, 0.992157, 0.0941176, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dv2yu"]
+bg_color = Color(0.996094, 0.988281, 0.09375, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.707031, 0.457031, 0.988281, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+corner_detail = 16
+
+[node name="Quiz" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cakb6")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_w4svm")
+
+[node name="Screen" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -254.0
+offset_top = -502.0
+offset_right = 254.0
+offset_bottom = 502.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Screen"]
+modulate = Color(0.462745, 0.145098, 0.941176, 1)
+clip_children = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_151fp")
+
+[node name="TextureRect" type="TextureRect" parent="Screen/Panel"]
+self_modulate = Color(1, 1, 1, 0.458824)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -564.0
+offset_top = 46.0
+offset_right = 569.0
+offset_bottom = -118.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3qq5e")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 46.0
+offset_top = 61.0
+offset_right = -46.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="Logo" type="Control" parent="Screen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="Circle" type="TextureRect" parent="Screen/VBoxContainer/Logo"]
+self_modulate = Color(0.784314, 0.65098, 0.980392, 1)
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(240, 75)
+texture = ExtResource("2_yng6b")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Shadow" type="TextureRect" parent="Screen/VBoxContainer/Logo/Circle"]
+modulate = Color(0.635294, 0.380392, 0.945098, 1)
+show_behind_parent = true
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 4.0
+offset_right = -3.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_yng6b")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="StarParticles" type="GPUParticles2D" parent="Screen/VBoxContainer/Logo"]
+position = Vector2(239, 73)
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_km45k")
+texture = ExtResource("5_l4gr7")
+lifetime = 2.5
+
+[node name="RotPoint" type="Control" parent="Screen/VBoxContainer/Logo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.1355
+offset_top = -17.6074
+offset_right = 17.8645
+offset_bottom = 22.3926
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.113446
+pivot_offset = Vector2(20, 20)
+
+[node name="Godot" type="TextureRect" parent="Screen/VBoxContainer/Logo/RotPoint"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.654
+offset_top = -65.0939
+offset_right = 68.3461
+offset_bottom = 8.90607
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(89, 37)
+texture = ExtResource("3_ieclj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Quiz" type="TextureRect" parent="Screen/VBoxContainer/Logo/RotPoint"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.5724
+offset_top = 1.08109
+offset_right = 109.428
+offset_bottom = 66.0811
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(78, 32.5)
+texture = ExtResource("4_aie3e")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VSeparator" type="VSeparator" parent="Screen/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="AvatarContainer" type="VBoxContainer" parent="Screen/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="CircleMask" type="TextureRect" parent="Screen/VBoxContainer/AvatarContainer"]
+clip_children = 1
+custom_minimum_size = Vector2(0, 225)
+layout_mode = 2
+texture = ExtResource("2_yng6b")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Avatar2" type="TextureRect" parent="Screen/VBoxContainer/AvatarContainer/CircleMask"]
+custom_minimum_size = Vector2(0, 225)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_nthxq")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Screen/VBoxContainer/AvatarContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.294118, 0.152941, 0.439216, 0.803922)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("3_61rg4")
+theme_override_font_sizes/font_size = 40
+text = "NICKNAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="Screen/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+
+[node name="ProgressContainer" type="HBoxContainer" parent="Screen/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Panel" type="Panel" parent="Screen/VBoxContainer/ProgressContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_46q8j")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Screen/VBoxContainer/ProgressContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = 7.0
+offset_right = -17.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="ProgressBar" type="ProgressBar" parent="Screen/VBoxContainer/ProgressContainer/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_e3dn2")
+show_percentage = false
+
+[node name="Coin" type="TextureRect" parent="Screen/VBoxContainer/ProgressContainer/Panel/HBoxContainer/ProgressBar"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -36.0
+offset_right = 29.0
+offset_bottom = 36.0
+grow_vertical = 2
+texture = ExtResource("7_2qgt1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Shadow" type="TextureRect" parent="Screen/VBoxContainer/ProgressContainer/Panel/HBoxContainer/ProgressBar/Coin"]
+self_modulate = Color(0.411765, 0.411765, 0.411765, 0.588235)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 3.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_2qgt1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Screen/VBoxContainer/ProgressContainer/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_61rg4")
+theme_override_font_sizes/font_size = 19
+text = "800"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="Screen/VBoxContainer/ProgressContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_46q8j")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Screen/VBoxContainer/ProgressContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = 7.0
+offset_right = -17.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="ProgressBar" type="ProgressBar" parent="Screen/VBoxContainer/ProgressContainer/Panel2/HBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_e3dn2")
+show_percentage = false
+
+[node name="Coin" type="TextureRect" parent="Screen/VBoxContainer/ProgressContainer/Panel2/HBoxContainer/ProgressBar"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -46.0
+offset_right = 29.0
+offset_bottom = 26.0
+grow_vertical = 2
+rotation = -0.270526
+pivot_offset = Vector2(36, 36)
+texture = ExtResource("10_7tebc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Shadow" type="TextureRect" parent="Screen/VBoxContainer/ProgressContainer/Panel2/HBoxContainer/ProgressBar/Coin"]
+self_modulate = Color(0.411765, 0.411765, 0.411765, 0.588235)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 3.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_7tebc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Screen/VBoxContainer/ProgressContainer/Panel2/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_61rg4")
+theme_override_font_sizes/font_size = 19
+text = "555"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonContainer" type="VBoxContainer" parent="Screen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/separation = 20
+
+[node name="Button" type="Button" parent="Screen/VBoxContainer/ButtonContainer"]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_dv2yu")
+icon_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Screen/VBoxContainer/ButtonContainer/Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = -22.5
+offset_right = 119.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="TextureRect" type="TextureRect" parent="Screen/VBoxContainer/ButtonContainer/Button/HBoxContainer"]
+self_modulate = Color(0.515625, 0.28125, 0.839844, 1)
+layout_mode = 2
+texture = ExtResource("8_kdb3r")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Screen/VBoxContainer/ButtonContainer/Button/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.519531, 0.28125, 0.84375, 1)
+theme_override_fonts/font = ExtResource("3_61rg4")
+theme_override_font_sizes/font_size = 24
+text = "SINGLE GAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="Screen/VBoxContainer/ButtonContainer"]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_dv2yu")
+icon_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Screen/VBoxContainer/ButtonContainer/Button2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = -22.5
+offset_right = 119.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="TextureRect" type="TextureRect" parent="Screen/VBoxContainer/ButtonContainer/Button2/HBoxContainer"]
+self_modulate = Color(0.515625, 0.28125, 0.839844, 1)
+layout_mode = 2
+texture = ExtResource("8_w4vus")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Screen/VBoxContainer/ButtonContainer/Button2/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.519531, 0.28125, 0.84375, 1)
+theme_override_fonts/font = ExtResource("3_61rg4")
+theme_override_font_sizes/font_size = 24
+text = "MULTIPLAYER GAME"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -9,12 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://dhbb73yqjwqgj" path="res://scenes/level_up/assets/separator.png" id="5_mxv4h"]
 [ext_resource type="Texture2D" uid="uid://cqlr6in0qyolb" path="res://scenes/level_up/assets/hexagone.png" id="8_s851w"]
 
-[sub_resource type="Gradient" id="Gradient_prniq"]
+[sub_resource type="Gradient" id="Gradient_kvxhj"]
 offsets = PackedFloat32Array(0, 0.464286, 1)
 colors = PackedColorArray(0.292969, 0.0828832, 0.109186, 1, 0.125, 0.120721, 0.118824, 1, 0, 0.224611, 0.238281, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_533cp"]
-gradient = SubResource("Gradient_prniq")
+gradient = SubResource("Gradient_kvxhj")
 width = 1920
 height = 1080
 use_hdr = true

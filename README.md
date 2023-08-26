@@ -5,12 +5,14 @@ A collection of UI deisgns implemented in Godot 4 ✨
 <p float="left">
     <a href=scenes/esport_event><img src="medias/results/esport_event.png" width="33%"/></a>
     <a href=scenes/level_up><img src="medias/results/level_up_result.gif" width="33%"/></a>
+    <a href=scenes/level_up><img src="medias/results/quiz_result.gif" width="33%"/></a>
 </div>
 
 ## Credits
 
 - **esport_event**: [Design by Sok Studio](https://dribbble.com/shots/20302183-Nafes-eSport-Platform-Components)
 - **level_up**: [Design by Koncepted](https://dribbble.com/shots/18340929-TIV-Rewards-Card-For-Gamers)
+- **quiz**: [Design by RH](https://dribbble.com/shots/20053509-Quizlingo-Vocabulary-Game-App-UI)
 
 ## About me
 

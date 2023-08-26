@@ -52,7 +52,6 @@ func _ready():
 	tween.tween_property(button, "self_modulate:a", 1.0, 0.8)
 	
 	tween.tween_interval(2.5)
-	tween.tween_callback(get_tree().quit)
 	
 func set_int_to_text(value: int, label: Label, add: bool = false) -> void:
 	if add:
