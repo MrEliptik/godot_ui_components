@@ -6,6 +6,7 @@ A collection of UI deisgns implemented in Godot 4 ✨
     <a href=scenes/esport_event><img src="medias/results/esport_event.png" width="30%"/></a>
     <a href=scenes/level_up><img src="medias/results/level_up_result.gif" width="30%"/></a>
     <a href=scenes/quiz><img src="medias/results/quiz_result.gif" width="30%"/></a>
+    <a href=scenes/loading_animation><img src="medias/results/loading_animation.gif" width="30%"/></a>
 </div>
 
 ## Credits

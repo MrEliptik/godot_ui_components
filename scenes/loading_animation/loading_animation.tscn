@@ -1,0 +1,423 @@
+[gd_scene load_steps=12 format=3 uid="uid://c52okrti73ehq"]
+
+[ext_resource type="Texture2D" uid="uid://bmfmtnp1mlonv" path="res://scenes/loading_animation/visuals/godot.png" id="1_1ys8q"]
+[ext_resource type="Script" path="res://scenes/loading_animation/scripts/loading_animation.gd" id="1_mchmf"]
+[ext_resource type="Texture2D" uid="uid://daqck3h8xlea" path="res://scenes/shared/visuals/circle_512.png" id="2_atxnr"]
+[ext_resource type="Texture2D" uid="uid://di607adgaag56" path="res://scenes/loading_animation/visuals/trail.png" id="4_gr6ov"]
+[ext_resource type="FontFile" uid="uid://b6nf5k17guhst" path="res://scenes/shared/fonts/lato/Lato-Regular.ttf" id="5_6dyc4"]
+
+[sub_resource type="Gradient" id="Gradient_7is2k"]
+colors = PackedColorArray(0.842236, 0.892298, 0.960938, 1, 0.627538, 0.660156, 0.650134, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3dsia"]
+gradient = SubResource("Gradient_7is2k")
+width = 1920
+height = 1080
+use_hdr = true
+fill_to = Vector2(1, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="Animation" id="Animation_ctqpm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Pivot/Ball:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-170, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Pivot/Ball:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Pivot/Ball:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.09, 0.09)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Pivot:show_behind_parent")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Pivot/Ball/Pivot:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(150, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Pivot/Ball/Trail:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.792157, 0.0941176, 0.305882, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Label:visible_characters")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
+
+[sub_resource type="Animation" id="Animation_cho06"]
+resource_name = "loop"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Pivot/Ball:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(-150, 0), Vector2(150, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Pivot/Ball:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.792157, 0.0941176, 0.305882, 1), Color(0.792157, 0.0941176, 0.305882, 1), Color(0.760784, 0.376471, 0.509804, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Pivot/Ball:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(-2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(0.08, 0.08), Vector2(0.095, 0.085), Vector2(0.08, 0.08), Vector2(0.065, 0.055)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Pivot:show_behind_parent")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(0, 8), Vector2(0, -8)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Pivot/Ball/Trail:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.792157, 0.0941176, 0.305882, 1), Color(0.792157, 0.0941176, 0.305882, 1), Color(0.760784, 0.376471, 0.509804, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Label:visible_characters")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [15, 18, 18]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../..")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_iobch"]
+resource_name = "rotate"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Pivot/Ball:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(-2, -2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(-150, 0), Vector2(150, 0), Vector2(-150, 0), Vector2(150, 0), Vector2(-150, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Pivot/Ball:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.5, 2, 3, 3.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.792157, 0.0941176, 0.305882, 1), Color(0.792157, 0.0941176, 0.305882, 1), Color(0.760784, 0.376471, 0.509804, 1), Color(0.792157, 0.0941176, 0.305882, 1), Color(0.792157, 0.0941176, 0.305882, 1), Color(0.760784, 0.376471, 0.509804, 1), Color(0.792157, 0.0941176, 0.305882, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Pivot/Ball:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4),
+"transitions": PackedFloat32Array(-2, -2, -2, -2, -2, -2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(0.08, 0.08), Vector2(0.095, 0.085), Vector2(0.08, 0.08), Vector2(0.065, 0.055), Vector2(0.08, 0.08), Vector2(0.095, 0.085), Vector2(0.08, 0.08), Vector2(0.065, 0.055), Vector2(0.08, 0.08)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Pivot:show_behind_parent")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(-2, -2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(0, 8), Vector2(0, -8), Vector2(0, 8), Vector2(0, -8), Vector2(0, 8)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = false
+tracks/5/path = NodePath("../Pivot/Ball/Pivot:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(-2, -2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(150, 0), Vector2(-200, 0), Vector2(150, 0), Vector2(-200, 0), Vector2(150, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Pivot/Ball/Trail:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1, 1.5, 2, 3, 3.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.792157, 0.0941176, 0.305882, 1), Color(0.792157, 0.0941176, 0.305882, 1), Color(0.760784, 0.376471, 0.509804, 1), Color(0.792157, 0.0941176, 0.305882, 1), Color(0.792157, 0.0941176, 0.305882, 1), Color(0.760784, 0.376471, 0.509804, 1), Color(0.792157, 0.0941176, 0.305882, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Label:visible_characters")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1.7, 2, 3.7, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [15, 18, 15, 18, 15]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../..")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bu4f0"]
+_data = {
+"RESET": SubResource("Animation_ctqpm"),
+"loop": SubResource("Animation_cho06"),
+"rotate": SubResource("Animation_iobch")
+}
+
+[node name="LoadingAnimation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mchmf")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_3dsia")
+
+[node name="Pivot" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 860.0
+offset_top = 446.0
+offset_right = -859.0
+offset_bottom = -446.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Godot" type="TextureRect" parent="Pivot"]
+self_modulate = Color(0.792157, 0.0941176, 0.305882, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1ys8q")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Pivot" type="Node2D" parent="Pivot"]
+position = Vector2(100.5, 102)
+rotation = -0.261799
+
+[node name="Ball" type="Sprite2D" parent="Pivot/Pivot"]
+position = Vector2(-170, 0)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_atxnr")
+
+[node name="Trail" type="Sprite2D" parent="Pivot/Pivot/Ball"]
+self_modulate = Color(0.792157, 0.0941176, 0.305882, 1)
+show_behind_parent = true
+scale = Vector2(5.30618, 5.30618)
+texture = ExtResource("4_gr6ov")
+offset = Vector2(-76.855, 0)
+
+[node name="Label" type="Label" parent="Pivot"]
+self_modulate = Color(0.192157, 0.184314, 0.188235, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -97.5
+offset_top = 13.0
+offset_right = 98.5
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("5_6dyc4")
+theme_override_font_sizes/font_size = 25
+text = "Gathering nodes..."
+visible_characters = 15
+visible_ratio = 0.833333
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pivot"]
+root_node = NodePath("../Godot")
+autoplay = "rotate"
+speed_scale = 1.5
+libraries = {
+"": SubResource("AnimationLibrary_bu4f0")
+}
+
+[connection signal="animation_finished" from="Pivot/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
