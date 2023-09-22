@@ -13,11 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://bbm5txs4nl8g0" path="res://scenes/shared/icons/icons8-people-96.png" id="8_w4vus"]
 [ext_resource type="Texture2D" uid="uid://bxxq6adnwn7nx" path="res://scenes/quiz/visuals/crown.png" id="10_7tebc"]
 
-[sub_resource type="Gradient" id="Gradient_7is2k"]
+[sub_resource type="Gradient" id="Gradient_yqhct"]
 colors = PackedColorArray(0.842236, 0.892298, 0.960938, 1, 0.627538, 0.660156, 0.650134, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_w4svm"]
-gradient = SubResource("Gradient_7is2k")
+gradient = SubResource("Gradient_yqhct")
 width = 1920
 height = 1080
 use_hdr = true
