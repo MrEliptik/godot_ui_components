@@ -22,8 +22,13 @@ window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 
+[editor]
+
+movie_writer/movie_file=""
+
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-textures/default_filters/anisotropic_filtering_level=3
+textures/default_filters/anisotropic_filtering_level=4
+anti_aliasing/quality/msaa_2d=3
+anti_aliasing/quality/screen_space_aa=1
