@@ -7,6 +7,7 @@ A collection of UI deisgns implemented in Godot 4 ✨
     <a href=scenes/level_up><img src="medias/results/level_up_result.gif" width="30%"/></a>
     <a href=scenes/quiz><img src="medias/results/quiz_result.gif" width="30%"/></a>
     <a href=scenes/loading_animation><img src="medias/results/loading_animation.gif" width="30%"/></a>
+    <a href=scenes/level_up_again><img src="medias/results/level_up_again.gif" width="30%"/></a>
 </div>
 
 ## Credits
@@ -19,7 +20,7 @@ A collection of UI deisgns implemented in Godot 4 ✨
 
 - [Discord](https://discord.gg/83nFRPTP6t)
 - [YouTube](https://www.youtube.com/channel/UCANaLfiFwsHttGv6qGvSEIw)
-- [Twitter](https://twitter.com/mreliptik) 
+- [Twitter](https://twitter.com/mreliptik)
 - [Instagram](https://www.instagram.com/mreliptik)
 - [Itch.io](https://mreliptik.itch.io/)
 - [Sketchfab](https://sketchfab.com/victor.meunierpk)
