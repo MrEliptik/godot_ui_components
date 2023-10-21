@@ -15,6 +15,7 @@ A collection of UI deisgns implemented in Godot 4 ✨
 - **esport_event**: [Design by Sok Studio](https://dribbble.com/shots/20302183-Nafes-eSport-Platform-Components)
 - **level_up**: [Design by Koncepted](https://dribbble.com/shots/18340929-TIV-Rewards-Card-For-Gamers)
 - **quiz**: [Design by RH](https://dribbble.com/shots/20053509-Quizlingo-Vocabulary-Game-App-UI)
+- **level_up_again**: [Design by Layer Lab](https://dribbble.com/shots/16442191-GUI-PRO-Kit-Simple-Casual)
 
 ## About me
 
