@@ -12,7 +12,7 @@ config_version=5
 
 config/name="godot_ui_components"
 config/features=PackedStringArray("4.1", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [display]
 
