@@ -1,6 +1,6 @@
 A collection of UI deisgns implemented in Godot 4 ✨
 
-## Components
+## 🎨 Components
 
 <p float="left">
     <a href=scenes/esport_event><img src="medias/results/esport_event.png" width="30%"/></a>
@@ -10,14 +10,14 @@ A collection of UI deisgns implemented in Godot 4 ✨
     <a href=scenes/level_up_again><img src="medias/results/level_up_again.gif" width="30%"/></a>
 </div>
 
-## Credits
+## 📔 Credits
 
 - **esport_event**: [Design by Sok Studio](https://dribbble.com/shots/20302183-Nafes-eSport-Platform-Components)
 - **level_up**: [Design by Koncepted](https://dribbble.com/shots/18340929-TIV-Rewards-Card-For-Gamers)
 - **quiz**: [Design by RH](https://dribbble.com/shots/20053509-Quizlingo-Vocabulary-Game-App-UI)
 - **level_up_again**: [Design by Layer Lab](https://dribbble.com/shots/16442191-GUI-PRO-Kit-Simple-Casual)
 
-## About me
+## 💁‍♂️ About me
 
 - [Discord](https://discord.gg/83nFRPTP6t)
 - [YouTube](https://www.youtube.com/channel/UCANaLfiFwsHttGv6qGvSEIw)
