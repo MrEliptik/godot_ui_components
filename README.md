@@ -10,6 +10,17 @@ A collection of UI deisgns implemented in Godot 4 ✨
     <a href=scenes/level_up_again><img src="medias/results/level_up_again.gif" width="30%"/></a>
 </div>
 
+## 📹 Videos
+
+<p float="left">
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=-JyUvMyyP7w" target="_blank">
+ <img src="http://img.youtube.com/vi/-JyUvMyyP7w/hqdefault.jpg" alt="Watch the video" width="30%" />
+</a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=4eOy9csk2mQ" target="_blank">
+ <img src="http://img.youtube.com/vi/4eOy9csk2mQ/hqdefault.jpg" alt="Watch the video" width="30%" />
+</a>
+</div>
+
 ## 📔 Credits
 
 - **esport_event**: [Design by Sok Studio](https://dribbble.com/shots/20302183-Nafes-eSport-Platform-Components)
