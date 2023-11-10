@@ -4,11 +4,11 @@
 [ext_resource type="Script" path="res://scenes/loading_fluid/scripts/loading_fluid.gd" id="1_e08c0"]
 [ext_resource type="Texture2D" uid="uid://daqck3h8xlea" path="res://scenes/shared/visuals/circle_512.png" id="1_srtjy"]
 
-[sub_resource type="Gradient" id="Gradient_yqhct"]
+[sub_resource type="Gradient" id="Gradient_msfi4"]
 colors = PackedColorArray(0.842236, 0.892298, 0.960938, 1, 0.627538, 0.660156, 0.650134, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ws8sl"]
-gradient = SubResource("Gradient_yqhct")
+gradient = SubResource("Gradient_msfi4")
 width = 1920
 height = 1080
 use_hdr = true
