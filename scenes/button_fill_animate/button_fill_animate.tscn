@@ -1,0 +1,332 @@
+[gd_scene load_steps=9 format=3 uid="uid://d14ve4kflwb2e"]
+
+[ext_resource type="Script" path="res://scenes/button_fill_animate/button_fill_animate.gd" id="1_f1sq2"]
+[ext_resource type="Script" path="res://scenes/button_fill_animate/button_fill_separate.gd" id="2_ecrbg"]
+
+[sub_resource type="Gradient" id="Gradient_yqhct"]
+colors = PackedColorArray(0.842236, 0.892298, 0.960938, 1, 0.627538, 0.660156, 0.650134, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wisvo"]
+gradient = SubResource("Gradient_yqhct")
+width = 1920
+height = 1080
+use_hdr = true
+fill_to = Vector2(1, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6wc6"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.729412, 0.729412, 0.729412, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hy10c"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.729412, 0.729412, 0.729412, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0atn"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.662745, 0.662745, 0.67451, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11vw4"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.662745, 0.662745, 0.67451, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="ButtonFillAnimate" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_wisvo")
+
+[node name="ButtonControl" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -564.0
+offset_top = -60.0
+offset_right = -36.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f1sq2")
+
+[node name="Button" type="Button" parent="ButtonControl"]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 61
+theme_override_styles/normal = SubResource("StyleBoxFlat_c6wc6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hy10c")
+
+[node name="ColorRect" type="ColorRect" parent="ButtonControl/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -95.0
+offset_bottom = -95.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.976471, 0.772549, 0.266667, 1)
+
+[node name="White" type="ColorRect" parent="ButtonControl/Button/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -193.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.937255, 0.94902, 1, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="ButtonControl/Button/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.984314, 0.992157, 0.239216, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="ButtonControl/Button/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 61.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0117647, 0.92549, 0.968627, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="ButtonControl/Button/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 95.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(322.5, 67)
+mouse_filter = 2
+color = Color(0.14902, 0.996078, 0.615686, 1)
+
+[node name="Label" type="Label" parent="ButtonControl/Button"]
+self_modulate = Color(0.403922, 0.403922, 0.403922, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.5
+offset_top = -52.0
+offset_right = 232.5
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(232, 52)
+theme_override_font_sizes/font_size = 56
+text = "Same speed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="ButtonControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l0atn")
+
+[node name="ButtonControl2" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 36.0
+offset_top = -60.0
+offset_right = 564.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_ecrbg")
+
+[node name="Button" type="Button" parent="ButtonControl2"]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 61
+theme_override_styles/normal = SubResource("StyleBoxFlat_c6wc6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hy10c")
+
+[node name="White" type="ColorRect" parent="ButtonControl2/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.937255, 0.94902, 1, 1)
+
+[node name="Colors" type="Control" parent="ButtonControl2/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Orange" type="ColorRect" parent="ButtonControl2/Button/Colors"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 120.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.976471, 0.772549, 0.266667, 1)
+
+[node name="Yellow" type="ColorRect" parent="ButtonControl2/Button/Colors"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 121.0
+offset_bottom = 121.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.984314, 0.992157, 0.239216, 1)
+
+[node name="Blue" type="ColorRect" parent="ButtonControl2/Button/Colors"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 121.0
+offset_bottom = 121.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0117647, 0.92549, 0.968627, 1)
+
+[node name="Green" type="ColorRect" parent="ButtonControl2/Button/Colors"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 121.0
+offset_bottom = 121.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(322.5, 67)
+mouse_filter = 2
+color = Color(0.14902, 0.996078, 0.615686, 1)
+
+[node name="Label" type="Label" parent="ButtonControl2/Button"]
+self_modulate = Color(0.403922, 0.403922, 0.403922, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.5
+offset_top = -52.0
+offset_right = 232.5
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(232, 52)
+theme_override_font_sizes/font_size = 56
+text = "Random speed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="ButtonControl2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_11vw4")
+
+[connection signal="mouse_entered" from="ButtonControl/Button" to="ButtonControl" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonControl/Button" to="ButtonControl" method="_on_button_mouse_exited"]
+[connection signal="mouse_entered" from="ButtonControl2/Button" to="ButtonControl2" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonControl2/Button" to="ButtonControl2" method="_on_button_mouse_exited"]
