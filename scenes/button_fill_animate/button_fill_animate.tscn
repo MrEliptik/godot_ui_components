@@ -110,7 +110,17 @@ theme_override_font_sizes/font_size = 61
 theme_override_styles/normal = SubResource("StyleBoxFlat_c6wc6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hy10c")
 
-[node name="ColorRect" type="ColorRect" parent="ButtonControl/Button"]
+[node name="White" type="ColorRect" parent="ButtonControl/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.937255, 0.94902, 1, 1)
+
+[node name="Orange" type="ColorRect" parent="ButtonControl/Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -122,19 +132,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.976471, 0.772549, 0.266667, 1)
 
-[node name="White" type="ColorRect" parent="ButtonControl/Button/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -193.0
-offset_bottom = -120.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.937255, 0.94902, 1, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="ButtonControl/Button/ColorRect"]
+[node name="Yellow" type="ColorRect" parent="ButtonControl/Button/Orange"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -146,7 +144,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.984314, 0.992157, 0.239216, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="ButtonControl/Button/ColorRect"]
+[node name="Blue" type="ColorRect" parent="ButtonControl/Button/Orange"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -158,7 +156,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.0117647, 0.92549, 0.968627, 1)
 
-[node name="ColorRect5" type="ColorRect" parent="ButtonControl/Button/ColorRect"]
+[node name="Green" type="ColorRect" parent="ButtonControl/Button/Orange"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

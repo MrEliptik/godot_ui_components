@@ -10,8 +10,8 @@ var tween: Tween
 @onready var panel: Panel = $Panel
 
 func _ready() -> void:
-	pass
-#	color_rect.position.y = hide_position
+	for c in colors.get_children():
+		c.position.y = c.size.y
 
 func show_colors() -> void:
 	if tween and tween.is_running():
