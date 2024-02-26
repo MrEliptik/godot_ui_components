@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://scenes/button_fill_animate/button_fill_animate.gd" id="1_f1sq2"]
 [ext_resource type="Script" path="res://scenes/button_fill_animate/button_fill_separate.gd" id="2_ecrbg"]
 
-[sub_resource type="Gradient" id="Gradient_bjwfo"]
+[sub_resource type="Gradient" id="Gradient_aja6f"]
 colors = PackedColorArray(0.303211, 0.464657, 0.682764, 1, 0.743229, 0.528483, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_uqwva"]
-gradient = SubResource("Gradient_bjwfo")
+gradient = SubResource("Gradient_aja6f")
 width = 1920
 height = 1080
 use_hdr = true
