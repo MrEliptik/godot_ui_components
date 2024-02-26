@@ -10,6 +10,8 @@ A collection of UI deisgns implemented in Godot 4 ✨
     <a href=scenes/level_up_again><img src="medias/results/level_up_again.gif" width="30%"/></a>
     <a href=scenes/loading_liquid><img src="medias/results/loading_liquid.gif" width="30%"/></a>
     <a href=scenes/button_fill_animate><img src="medias/results/button_fill_animate.gif" width="30%"/></a>
+    <a href=scenes/squishy_toggle><img src="medias/results/squishy_toggle.gif" width="30%"/></a>
+    <a href=scenes/cards_stack><img src="medias/results/cards_stack.gif" width="30%"/></a>
 </div>
 
 ## 📹 Videos
