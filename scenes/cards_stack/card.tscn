@@ -1,0 +1,113 @@
+[gd_scene load_steps=8 format=3 uid="uid://vm7jfk3vjddq"]
+
+[ext_resource type="Shader" path="res://scenes/shared/shaders/fake_3D.gdshader" id="1_hrtqo"]
+[ext_resource type="Script" path="res://scenes/cards_stack/scripts/card.gd" id="1_s7h5d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_px6tc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6f1bb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jkqhe"]
+resource_local_to_scene = true
+shader = ExtResource("1_hrtqo")
+shader_parameter/rect_size = null
+shader_parameter/fov = 90.0
+shader_parameter/cull_back = false
+shader_parameter/y_rot = 0.0
+shader_parameter/x_rot = 0.0
+shader_parameter/inset = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gt26c"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlh7n"]
+bg_color = Color(0.823529, 0.823529, 0.823529, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 16
+
+[node name="Button" type="Button"]
+material = SubResource("ShaderMaterial_px6tc")
+offset_right = 375.0
+offset_bottom = 210.0
+pivot_offset = Vector2(123.5, 69)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6f1bb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6f1bb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6f1bb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6f1bb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6f1bb")
+script = ExtResource("1_s7h5d")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_jkqhe")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(746, 418)
+render_target_update_mode = 4
+
+[node name="Card" type="Panel" parent="SubViewportContainer/SubViewport"]
+self_modulate = Color(1, 0.141176, 0.270588, 1)
+offset_right = 746.0
+offset_bottom = 418.0
+pivot_offset = Vector2(246.5, 137)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gt26c")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewportContainer/SubViewport/Card"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = -92.0
+offset_right = 294.0
+offset_bottom = -29.0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = 20
+
+[node name="Panel" type="Panel" parent="SubViewportContainer/SubViewport/Card/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vlh7n")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SubViewportContainer/SubViewport/Card/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+mouse_filter = 2
+theme_override_constants/separation = 15
+
+[node name="Panel2" type="Panel" parent="SubViewportContainer/SubViewport/Card/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vlh7n")
+
+[node name="Panel3" type="Panel" parent="SubViewportContainer/SubViewport/Card/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vlh7n")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]

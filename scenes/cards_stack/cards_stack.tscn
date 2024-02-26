@@ -1,0 +1,149 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0mx4seqmfq4d"]
+
+[ext_resource type="Script" path="res://scenes/cards_stack/scripts/cards_stack.gd" id="1_ba6y3"]
+[ext_resource type="PackedScene" uid="uid://vm7jfk3vjddq" path="res://scenes/cards_stack/card.tscn" id="1_bx0j3"]
+[ext_resource type="PackedScene" uid="uid://c5lintltlm2kl" path="res://scenes/squishy_toggle/squishy_toggle.tscn" id="3_ty2n8"]
+
+[node name="CardsStack" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ba6y3")
+
+[node name="BG" type="ColorRect" parent="."]
+self_modulate = Color(0.662745, 0.662745, 0.662745, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SquishyToggle" parent="." instance=ExtResource("3_ty2n8")]
+layout_mode = 1
+
+[node name="BG" parent="SquishyToggle" index="0"]
+visible = false
+mouse_filter = 2
+
+[node name="CheckButton" parent="SquishyToggle" index="1"]
+anchors_preset = 5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 32.0
+offset_bottom = 200.0
+grow_vertical = 1
+
+[node name="TopPoint" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 259.0
+offset_right = 20.0
+offset_bottom = 299.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="Cards" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -79.0
+offset_right = 20.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Card5" parent="Cards" instance=ExtResource("1_bx0j3")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -779.0
+offset_top = -912.0
+offset_right = -404.0
+offset_bottom = -700.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(187.5, 106)
+color = Color(0, 0.658824, 0.192157, 1)
+
+[node name="Card4" parent="Cards" instance=ExtResource("1_bx0j3")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 103.0
+offset_top = -824.0
+offset_right = 478.0
+offset_bottom = -612.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(187.5, 106)
+color = Color(0, 0.627451, 0.596078, 1)
+
+[node name="Card3" parent="Cards" instance=ExtResource("1_bx0j3")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -599.0
+offset_top = -568.0
+offset_right = -224.0
+offset_bottom = -356.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(187.5, 106)
+color = Color(0.380392, 0.494118, 1, 1)
+
+[node name="Card2" parent="Cards" instance=ExtResource("1_bx0j3")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 292.0
+offset_top = -409.0
+offset_right = 667.0
+offset_bottom = -197.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(187.5, 106)
+color = Color(0.772549, 0.207843, 1, 1)
+
+[node name="Card" parent="Cards" instance=ExtResource("1_bx0j3")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -187.0
+offset_top = -244.0
+offset_right = 188.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(187.5, 106)
+color = Color(1, 0.101961, 0.235294, 1)
+
+[connection signal="toggled" from="SquishyToggle/CheckButton" to="." method="_on_check_button_toggled"]
+
+[editable path="SquishyToggle"]
