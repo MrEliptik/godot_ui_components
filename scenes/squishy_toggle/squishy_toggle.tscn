@@ -1,0 +1,201 @@
+[gd_scene load_steps=11 format=3 uid="uid://c5lintltlm2kl"]
+
+[ext_resource type="Script" path="res://scenes/squishy_toggle/squishy_toggle.gd" id="1_lc7yg"]
+[ext_resource type="Texture2D" uid="uid://bvbsmc8whinmv" path="res://scenes/squishy_toggle/visuals/godot_head.png" id="2_5cvy7"]
+[ext_resource type="Texture2D" uid="uid://pqn5vi3wf2hd" path="res://scenes/squishy_toggle/visuals/godot_mouth_nose.png" id="3_fn6xf"]
+[ext_resource type="Texture2D" uid="uid://4olkc5cfh02h" path="res://scenes/squishy_toggle/visuals/eyes_off.png" id="4_2s370"]
+[ext_resource type="Texture2D" uid="uid://dfnb6bjb255sn" path="res://scenes/squishy_toggle/visuals/eyes_on.png" id="4_w0v3n"]
+
+[sub_resource type="Gradient" id="Gradient_egh2p"]
+colors = PackedColorArray(0.969431, 0.979133, 0.992483, 1, 1, 0.868671, 0.75265, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8bgce"]
+gradient = SubResource("Gradient_egh2p")
+width = 1920
+height = 1080
+use_hdr = true
+fill_to = Vector2(1, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bb7on"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ue8w"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+corner_detail = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mmkbq"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+corner_detail = 16
+
+[node name="SquishyToggle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_8bgce")
+
+[node name="CheckButton" type="CheckButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.0
+offset_top = -84.0
+offset_right = 157.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bb7on")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bb7on")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bb7on")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bb7on")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_bb7on")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bb7on")
+expand_icon = true
+script = ExtResource("1_lc7yg")
+color_on = Color(0, 0.611765, 0.968627, 1)
+color_off = Color(0.231373, 0.231373, 0.231373, 1)
+color_off_2 = Color(0.6, 0.6, 0.6, 1)
+duration = 0.35
+
+[node name="BG" type="Panel" parent="CheckButton"]
+self_modulate = Color(0.231373, 0.231373, 0.231373, 1)
+clip_children = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ue8w")
+
+[node name="BgOn" type="Panel" parent="CheckButton/BG"]
+self_modulate = Color(0, 0.611765, 0.968627, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -314.0
+offset_right = -314.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ue8w")
+
+[node name="Anchor" type="Control" parent="CheckButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -142.0
+offset_top = -69.0
+offset_right = -4.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(69, 69)
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Toggle" type="Panel" parent="CheckButton/Anchor"]
+self_modulate = Color(0.6, 0.6, 0.6, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(69, 69)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mmkbq")
+
+[node name="Head" type="TextureRect" parent="CheckButton/Anchor/Toggle"]
+self_modulate = Color(0.231373, 0.231373, 0.231373, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(53, 53)
+texture = ExtResource("2_5cvy7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Mouth" type="TextureRect" parent="CheckButton/Anchor/Toggle/Head"]
+self_modulate = Color(0.6, 0.6, 0.6, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 15.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_fn6xf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Eyes" type="TextureRect" parent="CheckButton/Anchor/Toggle/Head"]
+self_modulate = Color(0.6, 0.6, 0.6, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_2s370")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="EyesOn" type="TextureRect" parent="CheckButton/Anchor/Toggle/Head"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_w0v3n")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="mouse_entered" from="CheckButton" to="CheckButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CheckButton" to="CheckButton" method="_on_mouse_exited"]
+[connection signal="toggled" from="CheckButton" to="CheckButton" method="_on_toggled"]
