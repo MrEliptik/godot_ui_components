@@ -44,8 +44,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_6f1bb")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_6f1bb")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6f1bb")
 script = ExtResource("1_s7h5d")
-threshold_speed = null
-use_speed = null
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 material = SubResource("ShaderMaterial_jkqhe")
