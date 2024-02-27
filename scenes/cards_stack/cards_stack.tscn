@@ -33,7 +33,7 @@ grow_vertical = 2
 script = ExtResource("1_ba6y3")
 
 [node name="BG" type="ColorRect" parent="."]
-self_modulate = Color(0.545098, 0.545098, 0.545098, 1)
+self_modulate = Color(1, 1, 1, 0.541176)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -194,7 +194,7 @@ offset_bottom = -612.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(187.5, 106)
-color = Color(0, 0.627451, 0.596078, 1)
+color = Color(0.709804, 0.290196, 1, 1)
 threshold_speed = 150.0
 use_speed = true
 
@@ -230,7 +230,7 @@ offset_bottom = -197.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(187.5, 106)
-color = Color(0.772549, 0.207843, 1, 1)
+color = Color(0.768627, 0.466667, 0, 1)
 threshold_speed = 150.0
 use_speed = true
 
