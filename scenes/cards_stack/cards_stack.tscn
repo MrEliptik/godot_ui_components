@@ -1,8 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0mx4seqmfq4d"]
+[gd_scene load_steps=8 format=3 uid="uid://d0mx4seqmfq4d"]
 
 [ext_resource type="Script" path="res://scenes/cards_stack/scripts/cards_stack.gd" id="1_ba6y3"]
 [ext_resource type="PackedScene" uid="uid://vm7jfk3vjddq" path="res://scenes/cards_stack/card.tscn" id="1_bx0j3"]
-[ext_resource type="PackedScene" uid="uid://c5lintltlm2kl" path="res://scenes/squishy_toggle/squishy_toggle.tscn" id="3_ty2n8"]
+[ext_resource type="Script" path="res://scenes/cards_stack/scripts/toggle_3D.gd" id="2_kkgud"]
+[ext_resource type="FontFile" uid="uid://d4imt37tjbuss" path="res://scenes/shared/fonts/lato/Lato-Bold.ttf" id="3_u21mn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bb7on"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ue8w"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+corner_detail = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mmkbq"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+corner_detail = 16
 
 [node name="CardsStack" type="Control"]
 layout_mode = 3
@@ -14,7 +33,7 @@ grow_vertical = 2
 script = ExtResource("1_ba6y3")
 
 [node name="BG" type="ColorRect" parent="."]
-self_modulate = Color(0.662745, 0.662745, 0.662745, 1)
+self_modulate = Color(0.545098, 0.545098, 0.545098, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,20 +41,99 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SquishyToggle" parent="." instance=ExtResource("3_ty2n8")]
+[node name="Toggle3D" type="CheckButton" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-
-[node name="BG" parent="SquishyToggle" index="0"]
-visible = false
-mouse_filter = 2
-
-[node name="CheckButton" parent="SquishyToggle" index="1"]
 anchors_preset = 5
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_top = 32.0
-offset_bottom = 200.0
-grow_vertical = 1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 84.0
+offset_right = 62.0
+offset_bottom = 148.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bb7on")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bb7on")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bb7on")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bb7on")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_bb7on")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bb7on")
+expand_icon = true
+script = ExtResource("2_kkgud")
+color_on = Color(0.960784, 0.960784, 0.964706, 1)
+color_off = Color(0.960784, 0.960784, 0.964706, 1)
+color_on_bg = Color(0.941176, 0.941176, 0.941176, 0.823529)
+color_off_bg = Color(0.941176, 0.941176, 0.941176, 0.392157)
+duration = 0.4
+
+[node name="BG" type="Panel" parent="Toggle3D"]
+self_modulate = Color(0.231373, 0.231373, 0.231373, 1)
+clip_children = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ue8w")
+
+[node name="BgOn" type="Panel" parent="Toggle3D/BG"]
+self_modulate = Color(0, 0.611765, 0.968627, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -314.0
+offset_right = -314.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ue8w")
+
+[node name="Anchor" type="Control" parent="Toggle3D"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -28.0
+offset_right = -2.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(28, 28)
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Toggle" type="Panel" parent="Toggle3D/Anchor"]
+self_modulate = Color(0.6, 0.6, 0.6, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(69, 69)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mmkbq")
+
+[node name="Label" type="Label" parent="Toggle3D/Anchor/Toggle"]
+self_modulate = Color(0.176471, 0.176471, 0.176471, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_u21mn")
+theme_override_font_sizes/font_size = 30
+text = "2D"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TopPoint" type="Control" parent="."]
 layout_mode = 1
@@ -43,9 +141,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -20.0
-offset_top = 259.0
+offset_top = 342.0
 offset_right = 20.0
-offset_bottom = 299.0
+offset_bottom = 382.0
 grow_horizontal = 2
 mouse_filter = 2
 
@@ -79,6 +177,8 @@ grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(187.5, 106)
 color = Color(0, 0.658824, 0.192157, 1)
+threshold_speed = 150.0
+use_speed = true
 
 [node name="Card4" parent="Cards" instance=ExtResource("1_bx0j3")]
 layout_mode = 1
@@ -95,6 +195,8 @@ grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(187.5, 106)
 color = Color(0, 0.627451, 0.596078, 1)
+threshold_speed = 150.0
+use_speed = true
 
 [node name="Card3" parent="Cards" instance=ExtResource("1_bx0j3")]
 layout_mode = 1
@@ -111,6 +213,8 @@ grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(187.5, 106)
 color = Color(0.380392, 0.494118, 1, 1)
+threshold_speed = 150.0
+use_speed = true
 
 [node name="Card2" parent="Cards" instance=ExtResource("1_bx0j3")]
 layout_mode = 1
@@ -127,6 +231,8 @@ grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(187.5, 106)
 color = Color(0.772549, 0.207843, 1, 1)
+threshold_speed = 150.0
+use_speed = true
 
 [node name="Card" parent="Cards" instance=ExtResource("1_bx0j3")]
 layout_mode = 1
@@ -143,7 +249,10 @@ grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(187.5, 106)
 color = Color(1, 0.101961, 0.235294, 1)
+threshold_speed = 150.0
+use_speed = true
 
-[connection signal="toggled" from="SquishyToggle/CheckButton" to="." method="_on_check_button_toggled"]
-
-[editable path="SquishyToggle"]
+[connection signal="mouse_entered" from="Toggle3D" to="Toggle3D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Toggle3D" to="Toggle3D" method="_on_mouse_exited"]
+[connection signal="toggled" from="Toggle3D" to="." method="_on_check_button_toggled"]
+[connection signal="toggled" from="Toggle3D" to="Toggle3D" method="_on_toggled"]
