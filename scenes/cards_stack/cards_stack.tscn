@@ -178,7 +178,6 @@ grow_vertical = 0
 pivot_offset = Vector2(187.5, 106)
 color = Color(0, 0.658824, 0.192157, 1)
 threshold_speed = 150.0
-use_speed = true
 
 [node name="Card4" parent="Cards" instance=ExtResource("1_bx0j3")]
 layout_mode = 1
@@ -196,7 +195,6 @@ grow_vertical = 0
 pivot_offset = Vector2(187.5, 106)
 color = Color(0.709804, 0.290196, 1, 1)
 threshold_speed = 150.0
-use_speed = true
 
 [node name="Card3" parent="Cards" instance=ExtResource("1_bx0j3")]
 layout_mode = 1
@@ -214,7 +212,6 @@ grow_vertical = 0
 pivot_offset = Vector2(187.5, 106)
 color = Color(0.380392, 0.494118, 1, 1)
 threshold_speed = 150.0
-use_speed = true
 
 [node name="Card2" parent="Cards" instance=ExtResource("1_bx0j3")]
 layout_mode = 1
@@ -232,7 +229,6 @@ grow_vertical = 0
 pivot_offset = Vector2(187.5, 106)
 color = Color(0.768627, 0.466667, 0, 1)
 threshold_speed = 150.0
-use_speed = true
 
 [node name="Card" parent="Cards" instance=ExtResource("1_bx0j3")]
 layout_mode = 1
@@ -250,7 +246,6 @@ grow_vertical = 0
 pivot_offset = Vector2(187.5, 106)
 color = Color(1, 0.101961, 0.235294, 1)
 threshold_speed = 150.0
-use_speed = true
 
 [connection signal="mouse_entered" from="Toggle3D" to="Toggle3D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Toggle3D" to="Toggle3D" method="_on_mouse_exited"]
