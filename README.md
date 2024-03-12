@@ -38,11 +38,12 @@ A collection of UI deisgns implemented in Godot 4 ✨
 ## 💁‍♂️ About me
 
 - [Discord](https://discord.gg/83nFRPTP6t)
-- [YouTube](https://www.youtube.com/channel/UCANaLfiFwsHttGv6qGvSEIw)
+- [YouTube - Gamedev](https://www.youtube.com/c/MrEliptik)
+- [YouTube - Godot related](https://www.youtube.com/@mrelipteach)
 - [Twitter](https://twitter.com/mreliptik)
 - [Instagram](https://www.instagram.com/mreliptik)
 - [Itch.io](https://mreliptik.itch.io/)
-- [Sketchfab](https://sketchfab.com/victor.meunierpk)
+- [🔗 All links](https://bento.me/mreliptik)
 
 If you enjoyed this project and want to support me 👇
 
