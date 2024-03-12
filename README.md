@@ -43,7 +43,7 @@ A collection of UI deisgns implemented in Godot 4 ✨
 - [Twitter](https://twitter.com/mreliptik)
 - [Instagram](https://www.instagram.com/mreliptik)
 - [Itch.io](https://mreliptik.itch.io/)
-- [🔗 All links](https://bento.me/mreliptik)
+- [All links](https://bento.me/mreliptik)
 
 If you enjoyed this project and want to support me 👇
 
