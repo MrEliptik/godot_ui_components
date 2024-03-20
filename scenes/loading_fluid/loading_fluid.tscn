@@ -221,9 +221,9 @@ grow_vertical = 2
 texture = ExtResource("1_srtjy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "load"
 libraries = {
 "": SubResource("AnimationLibrary_qu2yl")
 }
+autoplay = "load"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

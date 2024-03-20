@@ -1,0 +1,427 @@
+[gd_scene load_steps=30 format=3 uid="uid://dst0og0kjqo74"]
+
+[ext_resource type="PackedScene" uid="uid://ccpeukrdsfbkm" path="res://scenes/balatro/card.tscn" id="1_0kik2"]
+[ext_resource type="Shader" path="res://scenes/balatro/shaders/noise_move.gdshader" id="1_lux0i"]
+[ext_resource type="Script" path="res://scenes/balatro/scripts/balatro.gd" id="1_sd3ku"]
+[ext_resource type="FontFile" uid="uid://b6nf5k17guhst" path="res://scenes/shared/fonts/lato/Lato-Regular.ttf" id="2_02ra0"]
+[ext_resource type="Script" path="res://scenes/balatro/resources/bbcode_rotation.gd" id="3_01uac"]
+[ext_resource type="Shader" path="res://scenes/shared/shaders/dissolve.gdshader" id="3_g5bs6"]
+[ext_resource type="Script" path="res://scenes/balatro/scripts/destroy_area.gd" id="4_4fdh5"]
+[ext_resource type="Shader" path="res://scenes/balatro/shaders/vhs.gdshader" id="6_xsyrq"]
+[ext_resource type="Script" path="res://scenes/balatro/scripts/drawn_cards.gd" id="7_svh6l"]
+[ext_resource type="Shader" path="res://scenes/shared/shaders/fake_3D.gdshader" id="8_v84jj"]
+[ext_resource type="Texture2D" uid="uid://cskh758f74ngv" path="res://scenes/balatro/visuals/Tiles_A_white.png" id="9_h0dct"]
+
+[sub_resource type="Gradient" id="Gradient_tndhy"]
+colors = PackedColorArray(6.97896e-07, 0.225695, 0.112985, 1, 1.841e-06, 0.343551, 0.129201, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qcf7v"]
+frequency = 0.0027
+fractal_octaves = 1
+fractal_gain = 0.075
+domain_warp_enabled = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_b60hj"]
+width = 1920
+height = 1080
+seamless = true
+color_ramp = SubResource("Gradient_tndhy")
+noise = SubResource("FastNoiseLite_qcf7v")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pin51"]
+shader = ExtResource("1_lux0i")
+shader_parameter/dir = Vector2(0.5, 0.5)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_b60hj")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_rvvo8"]
+script = ExtResource("3_01uac")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jx6xw"]
+bg_color = Color(1, 0, 0.14902, 0.25098)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0, 0.14902, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 12
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4miks"]
+size = Vector2(148, 197)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kntej"]
+seed = -15
+frequency = 0.0021
+fractal_octaves = 4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bboy4"]
+noise = SubResource("FastNoiseLite_kntej")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q8rer"]
+resource_local_to_scene = true
+shader = ExtResource("3_g5bs6")
+shader_parameter/dissolve_value = 1.0
+shader_parameter/burn_size = 0.1
+shader_parameter/burn_color = Color(1, 0.615686, 0, 1)
+shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_bboy4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2vahg"]
+resource_local_to_scene = true
+shader = ExtResource("3_g5bs6")
+shader_parameter/dissolve_value = 1.0
+shader_parameter/burn_size = 0.1
+shader_parameter/burn_color = Color(1, 0.615686, 0, 1)
+shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_bboy4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mblhh"]
+resource_local_to_scene = true
+shader = ExtResource("3_g5bs6")
+shader_parameter/dissolve_value = 1.0
+shader_parameter/burn_size = 0.1
+shader_parameter/burn_color = Color(1, 0.615686, 0, 1)
+shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_bboy4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_klrmv"]
+resource_local_to_scene = true
+shader = ExtResource("3_g5bs6")
+shader_parameter/dissolve_value = 1.0
+shader_parameter/burn_size = 0.1
+shader_parameter/burn_color = Color(1, 0.615686, 0, 1)
+shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_bboy4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l1lob"]
+resource_local_to_scene = true
+shader = ExtResource("3_g5bs6")
+shader_parameter/dissolve_value = 1.0
+shader_parameter/burn_size = 0.1
+shader_parameter/burn_color = Color(1, 0.615686, 0, 1)
+shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_bboy4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_opivu"]
+resource_local_to_scene = true
+shader = ExtResource("3_g5bs6")
+shader_parameter/dissolve_value = 1.0
+shader_parameter/burn_size = 0.1
+shader_parameter/burn_color = Color(1, 0.615686, 0, 1)
+shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_bboy4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cho03"]
+resource_local_to_scene = true
+shader = ExtResource("8_v84jj")
+shader_parameter/rect_size = Vector2(152, 207)
+shader_parameter/fov = 90.0
+shader_parameter/cull_back = true
+shader_parameter/y_rot = 0.0
+shader_parameter/x_rot = 0.0
+shader_parameter/inset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1d8k0"]
+shader = ExtResource("6_xsyrq")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.15
+shader_parameter/scanlines_width = 0.382
+shader_parameter/grille_opacity = 0.085
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = false
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 0.0
+shader_parameter/roll_variation = 0.1
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.0
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.0
+shader_parameter/aberration = 4.75e-08
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.882
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.0
+shader_parameter/vignette_opacity = 0.5
+
+[sub_resource type="Environment" id="Environment_46hvu"]
+background_mode = 3
+tonemap_mode = 3
+tonemap_exposure = 0.7
+glow_enabled = true
+glow_hdr_threshold = 1.3
+adjustment_enabled = true
+adjustment_contrast = 1.2
+adjustment_saturation = 1.45
+
+[node name="Balatro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sd3ku")
+max_offset = Vector2(12, 10)
+
+[node name="BG" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_pin51")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -316.0
+offset_top = -178.0
+offset_right = 317.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Parallax" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Parallax"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -183.0
+offset_top = 38.0
+offset_right = 183.0
+offset_bottom = 92.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("2_02ra0")
+theme_override_font_sizes/normal_font_size = 38
+bbcode_enabled = true
+text = "[center][wave amp=20.0 freq=8.0 connected=1][rainbow freq=1.0 sat=0.8 val=1.0]Balatro recreation[/rainbow][/wave][/center]"
+
+[node name="CustomEffect" type="RichTextLabel" parent="Parallax"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -183.0
+offset_top = -974.0
+offset_right = 183.0
+offset_bottom = -920.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("2_02ra0")
+theme_override_font_sizes/normal_font_size = 38
+bbcode_enabled = true
+text = "[center][rotation rot=15 char_count=12]Custom effect[/rotation][/center]"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_rvvo8")]
+
+[node name="DestroyArea" type="Panel" parent="Parallax"]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 682.0
+offset_right = 354.0
+offset_bottom = 937.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jx6xw")
+script = ExtResource("4_4fdh5")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Parallax/DestroyArea"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -11.5
+offset_right = 58.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 22
+text = "DESTROY HERE"
+horizontal_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="Parallax/DestroyArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parallax/DestroyArea/Area2D"]
+position = Vector2(95, 128.5)
+shape = SubResource("RectangleShape2D_4miks")
+
+[node name="Hand" type="Control" parent="Parallax"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -523.0
+offset_top = -20.0
+offset_right = 523.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Parallax/Hand"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 177.0
+offset_bottom = 347.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Card" parent="Parallax/Hand/HBoxContainer" instance=ExtResource("1_0kik2")]
+material = SubResource("ShaderMaterial_q8rer")
+layout_mode = 2
+
+[node name="Card2" parent="Parallax/Hand/HBoxContainer" instance=ExtResource("1_0kik2")]
+material = SubResource("ShaderMaterial_2vahg")
+layout_mode = 2
+
+[node name="Card3" parent="Parallax/Hand/HBoxContainer" instance=ExtResource("1_0kik2")]
+material = SubResource("ShaderMaterial_mblhh")
+layout_mode = 2
+
+[node name="Card4" parent="Parallax/Hand/HBoxContainer" instance=ExtResource("1_0kik2")]
+material = SubResource("ShaderMaterial_klrmv")
+layout_mode = 2
+
+[node name="Card5" parent="Parallax/Hand/HBoxContainer" instance=ExtResource("1_0kik2")]
+material = SubResource("ShaderMaterial_l1lob")
+layout_mode = 2
+
+[node name="Card" parent="Parallax" instance=ExtResource("1_0kik2")]
+material = SubResource("ShaderMaterial_opivu")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -783.0
+offset_top = -137.0
+offset_right = -631.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DrawnCards" type="Control" parent="Parallax" node_paths=PackedStringArray("from")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -182.0
+offset_bottom = -182.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_svh6l")
+from = NodePath("../Pile")
+card_scene = ExtResource("1_0kik2")
+card_offset_x = 100.0
+
+[node name="DrawBtn" type="Button" parent="Parallax"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 583.0
+offset_top = -147.0
+offset_right = 865.0
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "DRAW/UNDRAW"
+
+[node name="Pile" type="Control" parent="Parallax"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -312.0
+offset_top = -383.0
+offset_right = -160.0
+offset_bottom = -176.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="CardTexture2" type="TextureRect" parent="Parallax/Pile"]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_cho03")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 12.0
+offset_right = 10.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_h0dct")
+expand_mode = 1
+
+[node name="CardTexture3" type="TextureRect" parent="Parallax/Pile"]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_cho03")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 7.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_h0dct")
+expand_mode = 1
+
+[node name="CardTexture4" type="TextureRect" parent="Parallax/Pile"]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_cho03")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_h0dct")
+expand_mode = 1
+
+[node name="PostProcessing" type="CanvasLayer" parent="."]
+
+[node name="ScanLines" type="ColorRect" parent="PostProcessing"]
+material = SubResource("ShaderMaterial_1d8k0")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -352.0
+offset_top = -198.0
+offset_right = 352.0
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="PostProcessing"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_46hvu")
+
+[connection signal="area_entered" from="Parallax/DestroyArea/Area2D" to="Parallax/DestroyArea" method="_on_area_2d_area_entered"]
+[connection signal="pressed" from="Parallax/DrawBtn" to="Parallax/DrawnCards" method="_on_draw_btn_pressed"]
