@@ -15,6 +15,7 @@ var oscillator_velocity: float = 0.0
 var tween_rot: Tween
 var tween_hover: Tween
 var tween_destroy: Tween
+var tween_handle: Tween
 
 var last_mouse_pos: Vector2
 var mouse_velocity: Vector2
@@ -33,9 +34,9 @@ func _ready() -> void:
 	collision_shape.set_deferred("disabled", true)
 
 func _process(delta: float) -> void:
+	rotate_velocity(delta)
 	follow_mouse(delta)
 	handle_shadow(delta)
-	#rotate_velocity(delta)
 	
 func destroy() -> void:
 	card_texture.use_parent_material = true
@@ -46,11 +47,15 @@ func destroy() -> void:
 	tween_destroy.parallel().tween_property(shadow, "self_modulate:a", 0.0, 1.0)
 
 func rotate_velocity(delta: float) -> void:
+	if not following_mouse: return
+	var center_pos: Vector2 = global_position - (size/2.0)
+	print("Pos: ", center_pos)
+	print("Pos: ", last_pos)
 	# Compute the velocity
-	velocity = (global_position - last_pos) / delta
-	last_pos = global_position
+	velocity = (position - last_pos) / delta
+	last_pos = position
 	
-	#print("Mouse vel: ", mouse_velocity.normalized())
+	print("Velocity: ", velocity)
 	oscillator_velocity += velocity.normalized().x * velocity_multiplier
 	
 	# Oscillator stuff
@@ -83,17 +88,14 @@ func handle_mouse_click(event: InputEvent) -> void:
 		# drop card
 		following_mouse = false
 		collision_shape.set_deferred("disabled", false)
-		
-func hand_mouse_movement(event: InputEvent) -> void:
-	if not event is InputEventMouseMotion: return
-	
-	#mouse_velocity = event.velocity
+		if tween_handle and tween_handle.is_running():
+			tween_handle.kill()
+		tween_handle = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
+		tween_handle.tween_property(self, "rotation", 0.0, 0.3)
 
 func _on_gui_input(event: InputEvent) -> void:
 	
 	handle_mouse_click(event)
-	
-	hand_mouse_movement(event)
 	
 	# Don't compute rotation when moving the card
 	if following_mouse: return
