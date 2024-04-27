@@ -27,6 +27,9 @@ A collection of UI deisgns implemented in Godot 4 ✨
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=f15EMQUHODk" target="_blank">
  <img src="http://img.youtube.com/vi/f15EMQUHODk/hqdefault.jpg" alt="Watch the video" width="30%" />
 </a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=Alwy-TH0WzE" target="_blank">
+ <img src="http://img.youtube.com/vi/Alwy-TH0WzE/hqdefault.jpg" alt="Watch the video" width="30%" />
+</a>
 </div>
 
 ## 📔 Credits
