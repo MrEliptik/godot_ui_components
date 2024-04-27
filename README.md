@@ -12,6 +12,7 @@ A collection of UI deisgns implemented in Godot 4 ✨
     <a href=scenes/button_fill_animate><img src="medias/results/button_fill_animate.gif" width="30%"/></a>
     <a href=scenes/squishy_toggle><img src="medias/results/squishy_toggle.gif" width="30%"/></a>
     <a href=scenes/cards_stack><img src="medias/results/cards_stack.gif" width="30%"/></a>
+    <a href=scenes/balatro><img src="medias/results/balatro_cards.gif" width="30%"/></a>
 </div>
 
 ## 📹 Videos
